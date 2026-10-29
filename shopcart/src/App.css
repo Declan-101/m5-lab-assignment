@@ -1,0 +1,31 @@
+.product-row {
+  padding: 24px 5%;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.product-row h2 {
+  margin-bottom: 24px;
+  font-size: 26px;
+}
+
+.product-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-details img {
+  width: 160px;
+  height: 180px;
+  object-fit: contain;
+  margin-right: 30px;
+}
+
+.quantity-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 60px;
+  border: 3px solid #dee2e6;
+}
