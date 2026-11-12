@@ -29,3 +29,38 @@
   height: 60px;
   border: 3px solid #dee2e6;
 }
+.cart-product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.checkout-card {
+  max-width: 720px;
+  margin: 32px auto;
+}
+
+.class-login-form {
+  max-width: 320px;
+  padding: 18px;
+  border: 1px solid #dee2e6;
+}
+
+.customer-picture {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+@media (max-width: 480px) {
+  .product-details {
+    flex-wrap: wrap;
+  }
+  .product-details img {
+    width: 100%;
+    margin-right: 0;
+  }
+  header h1 {
+    font-size: 24px;
+  }
+}

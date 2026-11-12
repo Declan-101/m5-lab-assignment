@@ -7,7 +7,8 @@ import Navbar from "./navbar";
 
 class App extends Component {
   state = {
-    products: products
+    products: products,
+    customer: null
   };
 
   handleAdd = id => {
@@ -30,6 +31,10 @@ class App extends Component {
     }));
   };
 
+  handleSignIn = customer => {
+    this.setState({ customer });
+  };
+
   render() {
     const totalQuantity = this.state.products.reduce(
       (total, product) => total + product.value,
@@ -40,6 +45,8 @@ class App extends Component {
       <BrowserRouter>
         <Navbar
           total={totalQuantity}
+          customer={this.state.customer}
+          onSignIn={this.handleSignIn}
           products={this.state.products}
           onAdd={this.handleAdd}
           onSubtract={this.handleSubtract}
