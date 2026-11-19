@@ -41,7 +41,8 @@ function DisplayProducts({
       {products.map(product => (
         <section className="product-row" key={product.id}>
           <h2>{product.desc}</h2>
-          <p>Price: ${product.price.toFixed(2)}</p>
+          <p>Unit Price: ${product.price.toFixed(2)}</p>
+          <p>Subtotal: ${(product.price * product.value).toFixed(2)}</p>
 
           <div className="product-details">
             <img

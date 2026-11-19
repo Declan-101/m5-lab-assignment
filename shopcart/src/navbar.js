@@ -18,15 +18,28 @@ function Navbar({
  }) {
   return (
     <>
-      <header className="d-flex justify-content-between align-items-center bg-info p-4">
-        <Link to="/" className="text-dark text-decoration-none">
-          <h1 className="mb-0">Shop to React</h1>
-        </Link>
+<header className="d-flex justify-content-between align-items-center bg-info p-4">
+  <h1 className="mb-0">Shop to React</h1>
 
-        <Link to="/cart" className="text-dark text-decoration-none">
-          <FontAwesomeIcon icon={faShoppingCart} /> {total} items
-        </Link>
-      </header>
+  <nav
+    className="d-flex align-items-center gap-3"
+    aria-label="Main navigation"
+  >
+    <Link
+      to="/"
+      className="btn btn-outline-dark rounded-pill px-4"
+    >
+      Home
+    </Link>
+
+    <Link
+      to="/cart"
+      className="text-dark text-decoration-none"
+    >
+      <FontAwesomeIcon icon={faShoppingCart} /> {total} items
+    </Link>
+  </nav>
+</header>
 
       <Routes>
         <Route

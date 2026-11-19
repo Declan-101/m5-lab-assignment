@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 
 function Cart({ products, total }) {
   const cartItems = products.filter(product => product.value > 0);
+  const grandTotal = cartItems.reduce(
+    (sum, product) => sum + product.price * product.value,
+    0
+  );
 
   return (
     <main className="container my-4">
@@ -21,10 +25,19 @@ function Cart({ products, total }) {
                   <img src={product.image} alt={product.desc} className="cart-product-image" />
                   <p className="mb-0 mt-2">{product.desc}</p>
                 </div>
-                <strong>Quantity: {product.value}</strong>
+                <div>
+                  <p>Quantity: {product.value}</p>
+                  <p>Unit Price: ${product.price.toFixed(2)}</p>
+                  <strong>
+                    Subtotal: ${(product.price * product.value).toFixed(2)}
+                    </strong>
+                </div>
               </div>
             ))}
           </div>
+          <h3 className="mt-4">
+            Grand Total: ${grandTotal.toFixed(2)}
+          </h3>
           <Link className="btn btn-primary mt-3" to="/checkout">Check Out</Link>
         </>
       )}
