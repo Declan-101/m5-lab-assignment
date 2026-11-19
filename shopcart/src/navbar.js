@@ -6,7 +6,16 @@ import DisplayProducts from "./displayProducts";
 import Cart from "./cart";
 import Checkout from "./checkout";
 
-function Navbar({ total, products, onAdd, onSubtract, customer, onSignIn }) {
+function Navbar({ 
+  total, 
+  products, 
+  onAdd, 
+  onSubtract, 
+  customer, 
+  onSignIn,
+  sortType,
+  onSort,
+ }) {
   return (
     <>
       <header className="d-flex justify-content-between align-items-center bg-info p-4">
@@ -27,6 +36,8 @@ function Navbar({ total, products, onAdd, onSubtract, customer, onSignIn }) {
               products={products}
               onAdd={onAdd}
               onSubtract={onSubtract}
+              sortType={sortType}
+              onSort={onSort}
             />
           }
         />

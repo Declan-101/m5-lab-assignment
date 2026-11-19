@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
-function DisplayProducts({ products, onAdd, onSubtract }) {
+function DisplayProducts({ 
+  products, 
+  onAdd, 
+  onSubtract,
+  sortType,
+  onSort
+}) {
   const [show, setShow] = useState(false);
   const [activeProduct, setActiveProduct] = useState(null);
 
@@ -16,9 +22,26 @@ function DisplayProducts({ products, onAdd, onSubtract }) {
 
   return (
     <main>
+       <div className="p-3"> 
+        <label htmlFor="product-sort" className="me-2">
+          Sort by:
+        </label>
+
+        <select
+          id="product-sort"
+          value={sortType}
+          onChange={onSort}
+        >
+          <option value="normal">Normal</option>
+          <option value="lowest">Lowest</option>
+          <option value="highest">Highest</option>
+        </select>
+       </div>
+
       {products.map(product => (
         <section className="product-row" key={product.id}>
           <h2>{product.desc}</h2>
+          <p>Price: ${product.price.toFixed(2)}</p>
 
           <div className="product-details">
             <img
